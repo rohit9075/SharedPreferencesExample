@@ -28,9 +28,7 @@ public class MainActivity extends Activity {
         }
         if (sharedpreferences.contains(Email)) {
             email.setText(sharedpreferences.getString(Email, ""));
-
-        }
-
+            }
     }
 
     public void Save(View view) {
@@ -39,7 +37,7 @@ public class MainActivity extends Activity {
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString(Name, n);
         editor.putString(Email, e);
-        editor.commit();
+        editor.apply();
     }
 
     public void clear(View view) {
