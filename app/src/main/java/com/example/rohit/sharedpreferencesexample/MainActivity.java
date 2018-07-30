@@ -23,6 +23,8 @@ public class MainActivity extends Activity {
         email = (EditText) findViewById(R.id.etEmail);
         sharedpreferences = getSharedPreferences(mypreference,
                 Context.MODE_PRIVATE);
+
+// checking for name and email id in the sharedprerence file
         if (sharedpreferences.contains(Name)) {
             name.setText(sharedpreferences.getString(Name, ""));
         }
@@ -43,8 +45,11 @@ public class MainActivity extends Activity {
     public void clear(View view) {
         name = (EditText) findViewById(R.id.etName);
         email = (EditText) findViewById(R.id.etEmail);
-        name.setText("");
-        email.setText("");
+//        name.setText("");
+//        email.setText("");
+
+        name.getText().clear();
+        email.getText().clear();
 
     }
 
@@ -53,7 +58,7 @@ public class MainActivity extends Activity {
         email = (EditText) findViewById(R.id.etEmail);
         sharedpreferences = getSharedPreferences(mypreference,
                 Context.MODE_PRIVATE);
-
+// checking for name and id in the shared Preference file
         if (sharedpreferences.contains(Name)) {
             name.setText(sharedpreferences.getString(Name, ""));
         }
