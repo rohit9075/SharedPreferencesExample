@@ -11,20 +11,20 @@ public class MainActivity extends Activity {
     SharedPreferences sharedpreferences;
     EditText name;
     EditText email;
-    public static final String mypreference = "mypref";
-    public static final String Name = "nameKey";
-    public static final String Email = "emailKey";
+    public static final String mypreference = "mySharedPreference";
+    public static final String Name = "name";
+    public static final String Email = "email";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        name = (EditText) findViewById(R.id.etName);
-        email = (EditText) findViewById(R.id.etEmail);
+        name = findViewById(R.id.etName);
+        email = findViewById(R.id.etEmail);
         sharedpreferences = getSharedPreferences(mypreference,
                 Context.MODE_PRIVATE);
 
-// checking for name and email id in the sharedprerence file
+// checking for name and email id in the sharedpreferenc file
         if (sharedpreferences.contains(Name)) {
             name.setText(sharedpreferences.getString(Name, ""));
         }
@@ -43,10 +43,8 @@ public class MainActivity extends Activity {
     }
 
     public void clear(View view) {
-        name = (EditText) findViewById(R.id.etName);
-        email = (EditText) findViewById(R.id.etEmail);
-//        name.setText("");
-//        email.setText("");
+        name = findViewById(R.id.etName);
+        email =  findViewById(R.id.etEmail);
 
         name.getText().clear();
         email.getText().clear();
@@ -54,8 +52,8 @@ public class MainActivity extends Activity {
     }
 
     public void Get(View view) {
-        name = (EditText) findViewById(R.id.etName);
-        email = (EditText) findViewById(R.id.etEmail);
+        name =  findViewById(R.id.etName);
+        email = findViewById(R.id.etEmail);
         sharedpreferences = getSharedPreferences(mypreference,
                 Context.MODE_PRIVATE);
 // checking for name and id in the shared Preference file
